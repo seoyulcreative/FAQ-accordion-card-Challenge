@@ -1,0 +1,153 @@
+:root {
+    /* Text */
+
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    
+    /* Gradient */
+    
+    /* Background gradient */
+    
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+    
+    /* Text */
+    
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    
+    /* Dividers */
+    
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+
+    /* Font */
+    --font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background: linear-gradient(var(--Soft-violet), var(--Soft-blue));
+    font-family: var(--font-family);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    width: 350px;
+    height: 70vh;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin-top: 15vh;
+}
+
+.img-con {
+    width: 100%;
+    height: 30%;
+    background-image: url('/images/illustration-box-desktop.svg'), url('../images/illustration-woman-online-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: 10% 80%, center;
+    background-size: 35%, contain;
+    filter: drop-shadow(1px 10px 25px var(--Very-dark-grayish-blue));
+    margin-top: -28%;
+}
+
+.faq-con {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    margin-top: 2rem;
+}
+.faq-con > h1 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1em;
+    padding-bottom: 1em;
+    margin-top: 1rem;
+}
+.faq-item-con {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+.faq-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    padding-bottom: -0.5rem;
+    padding-left: .5rem;
+    border-bottom: 1px solid lightgray;
+    transition: all .5s;
+}
+.faq-item p:nth-of-type(1) {
+    font-size: .9rem;
+    white-space: nowrap;
+    position: relative;
+}
+.faq-item p:nth-of-type(2) {
+    padding: .5rem 0;
+    display: none;
+
+}
+.faq-item p:nth-of-type(2) {
+    color:gray;
+}
+
+.faq-item p:nth-child(1)::after {
+    content: url(/images/icon-arrow-down.svg);
+    margin-left: 2rem;
+    position: absolute;
+    right: 0;
+}
+
+.faq-item:hover p:nth-of-type(1) {
+    font-weight: bold;
+}
+.active p:nth-of-type(1) {
+    font-weight: bold;
+}
+.active p:nth-of-type(2) {
+    display: block;
+}
+.active p:nth-child(1)::after {
+    transform: rotate(180deg);
+}
+
+@media (min-width: 1024px) {
+    main {
+        width: 70vw;
+        flex-direction: row;
+        overflow: hidden;
+        position: relative;
+        justify-content: flex-end;
+    }
+    .img-con {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        left: 0%;
+        margin-top: 0;
+        margin-left: -5rem;
+        background-position: 10% 65%, center;
+    }
+    .faq-con {
+        width: 50%;
+    }
+    .faq-con > h1 {
+        text-align: start;
+    }
+    .faq-item {
+        width: 100%;
+       margin-left: .5rem;
+    }
+}
